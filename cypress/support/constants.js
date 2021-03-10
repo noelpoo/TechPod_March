@@ -4,6 +4,8 @@ export const url = {
 
 export const api = {
   local: "http://0.0.0.0:5000/api/v1",
+  currency:
+    "https://openexchangerates.org/api/latest.json?app_id=825efb56a4174364aa523bcb0c8981fe",
 };
 
 export const user = {
