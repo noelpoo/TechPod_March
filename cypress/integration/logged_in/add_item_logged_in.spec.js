@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import * as constants from "../support/constants";
-import * as utils from "../support/utils";
+import * as constants from "../../support/constants";
+import * as utils from "../../support/utils";
 
 describe("logged in with valid and invalid user, verify add item element for valid user", () => {
   before(() => {
@@ -74,7 +74,7 @@ describe("logged in with valid and invalid user, verify add item element for val
       })
       .then((resp_json) => {
         expect(resp_json.name).to.equal(randomItemName);
-        expect(resp_json.price).to.equal(randomItemPrice);
+        expect(String(resp_json.price)).to.equal(randomItemPrice);
       });
   });
 });

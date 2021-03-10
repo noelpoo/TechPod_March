@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import * as constants from "../support/constants";
-import * as utils from "../support/utils";
+import * as constants from "../../support/constants";
+import * as utils from "../../support/utils";
 
 describe("Home-page as a guest user", () => {
   before(() => {
