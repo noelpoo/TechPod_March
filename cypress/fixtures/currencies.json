@@ -1,0 +1,13 @@
+{
+  "disclaimer": "Usage subject to terms: https://openexchangerates.org/terms",
+  "license": "https://openexchangerates.org/license",
+  "timestamp": 1615341600,
+  "base": "USD",
+  "rates": {
+    "USD": 1,
+    "SGD": 2,
+    "AUD": 3,
+    "CAD": 4,
+    "MYR": 10
+  }
+}

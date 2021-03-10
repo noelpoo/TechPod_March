@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import * as constants from "../../support/constants";
-import * as utils from "../../support/utils";
 
 describe("testing currency selection", () => {
   before(() => {
