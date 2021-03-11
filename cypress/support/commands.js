@@ -23,3 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("selectCurrency", (currency) => {
+  cy.get(".currency_selector").wait(1000).select(currency);
+});

@@ -12,6 +12,7 @@ describe("logged in with valid and invalid user, verify add item element for val
     cy.intercept("POST", `${constants.api.local}/login`).as("login");
   });
 
+  //THIS
   it("login with invalid credentials should return 401 and error message from API", () => {
     cy.reload();
     cy.get(".login")
@@ -55,6 +56,7 @@ describe("logged in with valid and invalid user, verify add item element for val
       .should("exist");
   });
 
+  // THIS
   it("add item with a random name and random price, validate that API POST response matches inputs", () => {
     const randomItemName = utils.generateRandomItemName(5);
     const randomItemPrice = String(utils.generateRandomPrice());
