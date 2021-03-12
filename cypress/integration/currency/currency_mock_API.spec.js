@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import * as constants from "../../support/constants";
+var currencies = require("../../fixtures/currencies.json");
 
 describe("Mock API setup in cypress for integration testing", () => {
   before(() => {
@@ -19,7 +20,7 @@ describe("Mock API setup in cypress for integration testing", () => {
     );
   });
 
-  it("AC1 - use Mock exchange rate for MYR (USD-MYR = 5) and check UI", () => {
+  it("use Mock exchange rate for MYR (USD-MYR = 5) and check UI", () => {
     // 2. Verify price shown in UI using mocked exchange rates.
     let item_price_USD;
     cy.selectCurrency("MYR");
@@ -34,11 +35,14 @@ describe("Mock API setup in cypress for integration testing", () => {
           .find(".movements__row")
           .get(".movements__value")
           .eq(0)
-          .should("have.text", `${(10 * item_price_USD).toFixed(2)} MYR`);
+          .should(
+            "have.text",
+            `${(currencies.rates.MYR * item_price_USD).toFixed(2)} MYR`
+          );
       });
   });
 
-  it("AC1 - use Mock exchange rate for SGD (USD-SGD = 2) and check UI", () => {
+  it("use Mock exchange rate for SGD (USD-SGD = 2) and check UI", () => {
     let item_price_USD;
     cy.selectCurrency("SGD");
     cy.wait("@get_items_descending")
@@ -52,11 +56,14 @@ describe("Mock API setup in cypress for integration testing", () => {
           .find(".movements__row")
           .get(".movements__value")
           .eq(0)
-          .should("have.text", `${(2 * item_price_USD).toFixed(2)} SGD`);
+          .should(
+            "have.text",
+            `${(currencies.rates.SGD * item_price_USD).toFixed(2)} SGD`
+          );
       });
   });
 
-  it("AC1 - use Mock exchange rate for AUD (USD-AUD = 11) and check UI", () => {
+  it("use Mock exchange rate for AUD (USD-AUD = 11) and check UI", () => {
     let item_price_USD;
     cy.selectCurrency("AUD");
     cy.wait("@get_items_descending")
@@ -70,7 +77,10 @@ describe("Mock API setup in cypress for integration testing", () => {
           .find(".movements__row")
           .get(".movements__value")
           .eq(0)
-          .should("have.text", `${(11 * item_price_USD).toFixed(2)} AUD`);
+          .should(
+            "have.text",
+            `${(currencies.rates.AUD * item_price_USD).toFixed(2)} AUD`
+          );
       });
   });
 });
