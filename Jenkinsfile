@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('build'){
     steps{
-        git 'https://github.com/edx/cypress-e2e-tests.git'
+        git 'https://github.com/noelpoo/TechPod_March.git'
         }
     }
     // Install and verify Cypress
