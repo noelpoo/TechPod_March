@@ -1,1 +1,11 @@
-{}
+{
+ "reporter": "mochawesome",
+ "reporterOptions": {
+   "charts": false,
+   "html": false,
+   "json": true,
+   "reportDir": "cypress/output/mochawesome-report",
+   "reportTitle":"Cypress Automation Report",
+   "overwrite": false 
+ }
+}

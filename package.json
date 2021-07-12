@@ -4,11 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean-report": "rimraf output",
+    "cy:test": "cypress run",
+    "merge-results": "mochawesome-merge cypress/output//mochawesome-report/*.json > cypress/output/cypress-combined-report.json",
+    "generate-html": "marge --reportDir cypress/reports cypress/output/cypress-combined-report.json "
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^6.6.0"
+    "cypress": "^6.6.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-report-generator": "^5.1.0",
+    "mochawesome-merge": "^4.2.0",
+    "rimraf": "^3.0.2"
   }
 }
